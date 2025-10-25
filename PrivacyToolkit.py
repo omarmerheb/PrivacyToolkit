@@ -10,6 +10,9 @@ PrivacyToolkit - Linux privacy & basic hardening assistant (single-file)
 Author: Generated for user
 GitHub: https://github.com/omarmerheb
 BTC: 15o7Md2HJrQU2rSNyf5Azt8SPu9aBCCLi9
+
+The script runs in dry mode by default (observe what the script will do)
+in order to use add --live at the end ("python3 PrivacyToolkit.py --live)
 """
 
 import os
