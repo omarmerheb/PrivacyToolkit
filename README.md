@@ -42,6 +42,11 @@ PrivacyToolkit provides a suite of tools to enhance user privacy and harden Linu
 
 ---
 
+
+## The script runs in dry mode by default (observe what the script will do)
+## in order to use add --live at the end ("python3 PrivacyToolkit.py --live)
+
+
 ## Installation
 
 Clone the repository:
