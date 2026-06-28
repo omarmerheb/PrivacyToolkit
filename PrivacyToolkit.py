@@ -7,7 +7,7 @@ PrivacyToolkit - Linux privacy & basic hardening assistant (single-file)
 - Every destructive action requires explicit confirmation and creates a timestamped backup.
 - No automatic password changes; no data exfiltration.
 
-Author: Generated for user
+Author: OMAR MERHEB
 GitHub: https://github.com/omarmerheb
 BTC: 15o7Md2HJrQU2rSNyf5Azt8SPu9aBCCLi9
 
@@ -96,10 +96,7 @@ def log_action(msg: str):
         pass
 
 def run(cmd, capture=False, check=False, shell=False):
-    """
-    Wrapper for subprocess.run.
-    capture=True returns CompletedProcess, else returns CompletedProcess (stdout/stderr printed).
-    """
+   
     if capture:
         return subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, shell=shell)
     else:
@@ -114,9 +111,7 @@ def require_root_if_live(live: bool):
         sys.exit(1)
 
 def ask_confirm(prompt: str, required_confirm: str = None) -> bool:
-    """
-    Prompt user for yes/no. If required_confirm provided, user must type that exact string to continue.
-    """
+ 
     if required_confirm:
         print(f"\n!!! DANGEROUS ACTION WARNING !!!\n{prompt}\n")
         print(f"To proceed you must type: {required_confirm}")
@@ -127,9 +122,7 @@ def ask_confirm(prompt: str, required_confirm: str = None) -> bool:
         return resp.startswith("y")
 
 def backup_file(path: Path) -> Path:
-    """
-    Create a timestamped copy of path to backup dir. Returns backup path or None.
-    """
+   
     try:
         if not path.exists():
             return None
@@ -143,10 +136,7 @@ def backup_file(path: Path) -> Path:
         return None
 
 def write_file(path: Path, content: str, live: bool) -> bool:
-    """
-    Write file. In dry-run mode, print what would be written.
-    In live mode, make backup then write.
-    """
+  
     if not live:
         print(f"[DRY-RUN] Would write file: {path}")
         print("----- preview -----")
